@@ -1,7 +1,7 @@
 function FindProxyForURL(url, host) {
 
 // If the hostname matches, send direct.
-	if (	shExpMatch(host,'192.168.*') ||
+	if (shExpMatch(host,'192.168.*') ||
 		shExpMatch(host,'127.0.0.1') ||
 		shExpMatch(host,'10.*') ||
 		shExpMatch(host,'rosario.gov.ar') ||
@@ -31,7 +31,18 @@ function FindProxyForURL(url, host) {
 		shExpMatch(host,'netflix.com') ||
 		shExpMatch(host,'*.facebook.com') ||
 		shExpMatch(host,'facebook.com'))
+	{
+		if ((shExpMatch(host,'*.facebook.com') ||
+			shExpMatch(host,'facebook.com')) && 
+			(myIpAddress() == "192.168.20.219" ||
+			myIpAddress() == "192.168.20.74" ||
+			myIpAddress() == "192.168.20.184" ||
+			myIpAddress() == "192.168.20.189"))
+		{
+			return "PROXY proxyespecial.svc.rosario.gov.ar:3128";
+		}
 		return "DIRECT";
+	}
 
 // If the protocol or URL matches, send direct.
 	if (	shExpMatch(url,'192.168.*') ||
