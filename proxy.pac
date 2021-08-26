@@ -29,15 +29,14 @@ function FindProxyForURL(url, host) {
 		shExpMatch(host,'<local>') ||
 		shExpMatch(host,'*.netflix.com') ||
 		shExpMatch(host,'netflix.com') ||
-		shExpMatch(host,'*.facebook.com') ||
 		shExpMatch(host,'facebook.com'))
 	{
-		if ((shExpMatch(host,'*.facebook.com') ||
-			shExpMatch(host,'facebook.com')) && 
-			(myIpAddress() == "192.168.20.219" ||
-			myIpAddress() == "192.168.20.74" ||
-			myIpAddress() == "192.168.20.184" ||
-			myIpAddress() == "192.168.20.189"))
+		if ( 
+				myIpAddress() == "192.168.20.219" ||
+				myIpAddress() == "192.168.20.74" ||
+				myIpAddress() == "192.168.20.184" ||
+				myIpAddress() == "192.168.20.189"
+			)
 		{
 			return "PROXY proxyespecial.svc.rosario.gov.ar:3128";
 		}
@@ -105,5 +104,4 @@ function FindProxyForURL(url, host) {
 
 // DEFAULT RULE: All other traffic, use below proxies, in fail-over order.
 	return "PROXY proxydgt.svc.rosario.gov.ar:3128";
-
 }
