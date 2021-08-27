@@ -28,8 +28,7 @@ function FindProxyForURL(url, host) {
 		shExpMatch(host,'*.culturarosario.org.ar') ||
 		shExpMatch(host,'<local>') ||
 		shExpMatch(host,'*.netflix.com') ||
-		shExpMatch(host,'netflix.com') ||
-		shExpMatch(host,'facebook.com'))
+		shExpMatch(host,'netflix.com'))
 	{
 		if ( 
 				myIpAddress() == "192.168.20.219" ||
