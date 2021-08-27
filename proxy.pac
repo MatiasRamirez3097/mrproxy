@@ -30,15 +30,6 @@ function FindProxyForURL(url, host) {
 		shExpMatch(host,'*.netflix.com') ||
 		shExpMatch(host,'netflix.com'))
 	{
-		if ( 
-				myIpAddress() == "192.168.20.219" ||
-				myIpAddress() == "192.168.20.74" ||
-				myIpAddress() == "192.168.20.184" ||
-				myIpAddress() == "192.168.20.189"
-			)
-		{
-			return "PROXY proxyespecial.svc.rosario.gov.ar:3128";
-		}
 		return "DIRECT";
 	}
 
